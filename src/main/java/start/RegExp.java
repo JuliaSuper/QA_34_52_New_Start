@@ -37,6 +37,8 @@ public class RegExp {
         System.out.println("isEmail =>" +isEmail("myemail@gmail.com"));
         System.out.println("isEmail =>" +isEmail("myema.il@gmail.com"));
         System.out.println("isEmail =>" +isEmail("myema..il@gmail.com"));
+        System.out.println("===============================");
+        System.out.println("isFullName =>" +isFullName("Julia Saveleva"));
     }
 
     static boolean isDigit(String str) {
@@ -54,6 +56,13 @@ public class RegExp {
     }
     static boolean isEmail (String str) {
         String regExp = "^\\w+\\.{0,1}\\w*@\\w+\\.[A-Za-z]{2,}$";
+        Pattern p = Pattern.compile(regExp);
+        Matcher m = p.matcher(str);
+        return m.matches();
+    }
+
+    static boolean isFullName (String str) {
+        String regExp = "^[A-Z]{1}[a-z]+\\s{1}[A-Z]{1}[a-z]+$";
         Pattern p = Pattern.compile(regExp);
         Matcher m = p.matcher(str);
         return m.matches();
