@@ -105,6 +105,7 @@ WebElement linkTerms = driver.findElement
 
 
 
+
         pause(2000);
         driver.quit();
     }
